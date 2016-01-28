@@ -11,11 +11,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160121042933) do
+ActiveRecord::Schema.define(version: 20160128154838) do
 
   create_table "blogposts", force: true do |t|
     t.string   "title"
     t.text     "contents"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "comments", force: true do |t|
+    t.text     "commenttext"
+    t.string   "author"
+    t.integer  "blogpost_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "dictionar_words", force: true do |t|
+    t.string   "word"
+    t.integer  "count"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "dictionary_words", force: true do |t|
+    t.string   "word"
+    t.integer  "count"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
